@@ -1,9 +1,11 @@
+//...1 here the root jo div ka h vo render h to html ka work is done here
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
+//...2here APP is the object which we render and upar we have imported it
 ReactDOM.render(
   <React.StrictMode>
     <App />
