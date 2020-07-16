@@ -1,6 +1,8 @@
 .App {
   text-align: center;
 }
+/* 
+all of these including the above part is provided so we dont need their styling
 
 .App-logo {
   height: 40vmin;
@@ -35,4 +37,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
