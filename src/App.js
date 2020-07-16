@@ -12,8 +12,9 @@ function App() {
        <h1>
          HII, this is first commit
        </h1>
+       <p>hii can add anyting here because it is in the root</p>
     </div>
-     <h1>cant add anything here will show error can add only in the root element i.e div here</h1> 
+     /* <h1>cant add anything here will show error can add only in the root element i.e div here</h1> */
 //we will se that how that code which we have commented works 
 
   // return(
