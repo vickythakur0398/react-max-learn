@@ -15,7 +15,7 @@ function App() {
 
   return(
     //here crateElement can take unlimited agruments but min 3 is necessary
-  React.createElement('div' ,null, 'h1' , 'here neither styling nor h1 tag will work')
+  React.createElement('div' ,null , React.createElement('h1', null, 'so that is in h1 but w/o styling'))
   );
 }
 
