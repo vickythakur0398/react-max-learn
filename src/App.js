@@ -18,6 +18,12 @@ function App() {
        {/* so here the component which we have made vo deikgea  */}
        
        <Person></Person>
+       {/* other way of writing if code is of one line */}
+       <Person/>
+       <Person/>
+
+       <Person/>
+
     </div>
     // now we are adding few more components in Person.js
      /* <h1>cant add anything here will show error can add only in the root element i.e div here</h1> */
