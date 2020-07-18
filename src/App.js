@@ -21,7 +21,7 @@ function App() {
        {/* other way of writing if code is of one line */}
        <Person name= "vicky" age = "12"/>
        <Person name ="sameer" age ="18"/>
-       {/* if you want o add something extra then simply add that like this */}
+       {/* if you want o add something extra then simply add that like this par ye pua nhi tha ab how to use this ye to show nhi ho rha tha ab hpga next commit me*/}
        <Person name ="stephanie" age ="22">and her hobbies are breaking hearts</Person>
 
        
