@@ -2,6 +2,8 @@
 //so this is our 
 import React from 'react';
 import './App.css';
+import Person from './Person/Person';
+import person from './Person/Person';
 
 function App() {
   return (
@@ -13,7 +15,11 @@ function App() {
          HII, this is first commit
        </h1>
        <p>hii can add anyting here because it is in the root</p>
+       {/* so here the component which we have made vo deikgea  */}
+       
+       <Person></Person>
     </div>
+    // now we are adding few more components in Person.js
      /* <h1>cant add anything here will show error can add only in the root element i.e div here</h1> */
 //we will se that how that code which we have commented works 
 
