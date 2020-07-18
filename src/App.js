@@ -62,18 +62,36 @@ class App extends Component{
    persons: [
       {name:'vicky' ,age: '22' },
       {name: 'sammer' , age:'24'},
-    {name:'neha' , age:'22'}]
-  }
+    {name:'neha' , age:'22'}],
+    justToShowIskoAffect : 'nhi karega set state'
+   }
+   
+
+  // here we are handling click button for first will check its workig or not
+  switchHandler = () =>{
+    console.log('hii');
+    //now fun part begin ab hum yaha pe state ko change karenge on click state me jo bhi h or agar me updation chahta hu click mne to jo me yaha likhunga vo ho jaega click pe or state bas usi state ko change karega jese bas persons pe karengeto ye ise overwrite kar dega is state se
+    //niche ek or likha just to show state ise kuch nhi karega
+    //or there is a way of setting it i.e setState
+    this.setState({
+      persons: [
+        {name:'vicky Thakur' ,age: '23' },
+        {name: 'sammer Ranjan' , age:'24'},
+      {name:'Neha Meena' , age:'23'}]
+
+    })
+
+  } 
   render(){
     return(
       <div className = "App">
         <h1>hii thiis is class component</h1>
+        <button onClick ={this.switchHandler}>click here</button>
         <Person name = {this.state.persons[0].name} age ={this.state.persons[0].age}></Person>
         <Person name = {this.state.persons[1].name} age ={this.state.persons[1].age}></Person>
         <Person name = {this.state.persons[2].name} age ={this.state.persons[2].age}></Person>
 
 
-        {/* <p name ={this.state.personsr[1].name}></p> */}
 
       </div>
     )
