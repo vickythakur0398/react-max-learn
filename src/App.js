@@ -17,12 +17,14 @@ function App() {
        <p>hii can add anyting here because it is in the root</p>
        {/* so here the component which we have made vo deikgea  */}
        
-       <Person></Person>
+       
        {/* other way of writing if code is of one line */}
-       <Person/>
-       <Person/>
+       <Person name= "vicky" age = "12"/>
+       <Person name ="sameer" age ="18"/>
+       {/* if you want o add something extra then simply add that like this */}
+       <Person name ="stephanie" age ="22">and her hobbies are breaking hearts</Person>
 
-       <Person/>
+       
 
     </div>
     // now we are adding few more components in Person.js
