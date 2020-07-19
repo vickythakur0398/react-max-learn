@@ -63,7 +63,9 @@ class App extends Component{
       {name:'vicky' ,age: '22' },
       {name: 'sammer' , age:'24'},
     {name:'neha' , age:'22'}],
-    justToShowIskoAffect : 'nhi karega set state'
+    justToShowIskoAffect : 'nhi karega set state',
+    // yaha pe ye add kia h boolean jo pehle hi false dikha rha h okk
+    showPerson : false
    }
    
 
@@ -97,31 +99,56 @@ class App extends Component{
         {name: event.target.value , age:'23'}]
 
     })
-
-
-
   }
+
+    //now we will render our content jo ki person h conditionally to crux ye h ki jab button click karenge to hi vo show ho vrna na ho okkk
+tooglePerson = () =>{
+  //yaha false isme bhar lia doesShow me  to reocurring h ek false true aise
+  const doesShow = this.state.showPerson;
+  //or yaha state ko jabhi change kia agar agar showPerson ulta h doesShow se to 
+  this.setState({showPerson : !doesShow});
+
+
+}
+
+
+
+  
   render(){
     return(
       <div className = "App">
       
         <h1>hii thiis is class component</h1>
-        <button onClick ={this.switchHandler.bind(this, 'vickey' )}>click here</button>
-        <Person name = {this.state.persons[0].name} age ={this.state.persons[0].age}></Person>
-        <Person name = {this.state.persons[1].name}
-         age ={this.state.persons[1].age}
-         //yaha pe hum chanhte h ki ye isko bhi click karne pe ho jae islie humne yaha dal dia h or yaha humne dala h kyuki person.js me to hum switch handler ko acces nhi kar skte par ab click ko as a prop ki tarah kar skte h
-        //  now we want ki hum ye state ka data hardcore na kare balki apni marzi se bheje
-         click= {this.switchHandler.bind(this, 'vickyy')}></Person>
-        <Person name = {this.state.persons[2].name} 
-        age ={this.state.persons[2].age}
-        // yaha jo changed dala h vo hi props me bhejenge
-        changed = {this.nameChangeHandler}></Person>
+        {/* <button onClick ={this.switchHandler.bind(this, 'vickey' )}>click here</button> */}
+        {/* ab yaha pe ise ek div me wrap kar rhe h or jice onclick pe ye show ho or isme if else nhi chalega isme trenary operator chalegaa hum bas simple statement use kar skte h yaha par na ki block statement  upar bana h button usko comment karkr */}
+        <button onClick= {this.tooglePerson}>Show Persons</button>
+       
+{/* ye boolean h to showPerson to ye true hi h  */}
+        {
+          
+          this.state.showPerson ===true ?
+
+          
+          <div>
+        
+              <Person name = {this.state.persons[0].name} age ={this.state.persons[0].age}></Person>
+              <Person name = {this.state.persons[1].name}
+              age ={this.state.persons[1].age}
+              //yaha pe hum chanhte h ki ye isko bhi click karne pe ho jae islie humne yaha dal dia h or yaha humne dala h kyuki person.js me to hum switch handler ko acces nhi kar skte par ab click ko as a prop ki tarah kar skte h
+              //  now we want ki hum ye state ka data hardcore na kare balki apni marzi se bheje
+              click= {this.switchHandler.bind(this, 'vickyy')}></Person>
+              <Person name = {this.state.persons[2].name} 
+              age ={this.state.persons[2].age}
+              // yaha jo changed dala h vo hi props me bhejenge
+              changed = {this.nameChangeHandler}></Person>
+          
+         </div> :null
+        }
 
 
 
       </div>
-    )
+    );
   }
 }
 

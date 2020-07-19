@@ -2,6 +2,7 @@
 /* or ise import karna hoga person.js me obvious h par app.js me nhi kyuki vo webpack dekh lega */
 .Person{
     margin: auto;
+    margin-bottom: 20px;
     padding: 10px;
     border: 1px solid #eee;
     box-shadow: 0 2px 3px #ccc;
