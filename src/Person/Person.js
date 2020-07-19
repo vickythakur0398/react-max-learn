@@ -1,5 +1,7 @@
 import React from 'react';
 //as we know the code in jsx is running like this because of react so its must
+// importing styling
+import './Person.css'
 
 //this is a func in es 6 format
 const person = (props) => {
@@ -10,7 +12,7 @@ const person = (props) => {
    //ab is person ka jaha bhi use karna h vaha kar
    //ab hum chahte h ki extra jo bich me likha h vo n=bhi jae use props ka choldren kehte h 
    return(
-       <div>
+       <div className ='Person'>
        {/* here we have added the onclick on this paragraph or click pe jo humne pass kia h app.js ke refrence me vo hoga bas  */}
 
            <p onClick={props.click}>I am {props.name} and i am {props.age} years old</p>
