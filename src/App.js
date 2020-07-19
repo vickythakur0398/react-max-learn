@@ -73,6 +73,7 @@ class App extends Component{
     //now fun part begin ab hum yaha pe state ko change karenge on click state me jo bhi h or agar me updation chahta hu click mne to jo me yaha likhunga vo ho jaega click pe or state bas usi state ko change karega jese bas persons pe karengeto ye ise overwrite kar dega is state se
     //niche ek or likha just to show state ise kuch nhi karega
     //or there is a way of setting it i.e setState
+    
     this.setState({
       persons: [
         {name:'vicky Thakur' ,age: '23' },
@@ -85,10 +86,14 @@ class App extends Component{
   render(){
     return(
       <div className = "App">
+      
         <h1>hii thiis is class component</h1>
         <button onClick ={this.switchHandler}>click here</button>
         <Person name = {this.state.persons[0].name} age ={this.state.persons[0].age}></Person>
-        <Person name = {this.state.persons[1].name} age ={this.state.persons[1].age}></Person>
+        <Person name = {this.state.persons[1].name}
+         age ={this.state.persons[1].age}
+         //yaha pe hum chanhte h ki ye isko bhi click karne pe ho jae islie humne yaha dal dia h or yaha humne dala h kyuki person.js me to hum switch handler ko acces nhi kar skte par ab click ko as a prop ki tarah kar skte h
+         click= {this.switchHandler}></Person>
         <Person name = {this.state.persons[2].name} age ={this.state.persons[2].age}></Person>
 
 
