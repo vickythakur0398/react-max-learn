@@ -83,7 +83,24 @@ class App extends Component{
 
     })
 
-  } 
+  }
+  
+  //ab yaha pe hum input ke hisab se change karaenge nam for that
+  //event kyuki click karne pe event hi jaega hai na or change karana h state ko  
+  nameChangeHandler = (event) =>{
+
+    this.setState({
+      persons: [
+        {name: 'vicky' ,age: '23' },
+        {name: 'sameer ranjan' , age:'24'},
+        // isme kya h ki jo event me jo ki input h usme jo aiega contet uski value iske naam ki jagah show karega jisme hum change karna chahte h usme add karoo me neha me kar rha hu
+        {name: event.target.value , age:'23'}]
+
+    })
+
+
+
+  }
   render(){
     return(
       <div className = "App">
@@ -96,7 +113,10 @@ class App extends Component{
          //yaha pe hum chanhte h ki ye isko bhi click karne pe ho jae islie humne yaha dal dia h or yaha humne dala h kyuki person.js me to hum switch handler ko acces nhi kar skte par ab click ko as a prop ki tarah kar skte h
         //  now we want ki hum ye state ka data hardcore na kare balki apni marzi se bheje
          click= {this.switchHandler.bind(this, 'vickyy')}></Person>
-        <Person name = {this.state.persons[2].name} age ={this.state.persons[2].age}></Person>
+        <Person name = {this.state.persons[2].name} 
+        age ={this.state.persons[2].age}
+        // yaha jo changed dala h vo hi props me bhejenge
+        changed = {this.nameChangeHandler}></Person>
 
 
 
