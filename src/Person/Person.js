@@ -12,6 +12,7 @@ const person = (props) => {
    return(
        <div>
        {/* here we have added the onclick on this paragraph or click pe jo humne pass kia h app.js ke refrence me vo hoga bas  */}
+       
            <p onClick={props.click}>I am {props.name} and i am {props.age} years old</p>
            {/* yaha pe aiega prop ka children agar koi ise use karna chahta h to or user jab use karna chaiega to vo kuch bhi pass kar skta h even a new react component humne bas text kia h or children inbuilt h */}
            <p>{props.children}</p>

@@ -68,7 +68,8 @@ class App extends Component{
    
 
   // here we are handling click button for first will check its workig or not
-  switchHandler = () =>{
+  //ab yaha hum harcore nhi kar rhe h balki khud denge ki kya likhna h bas ek ke lie 
+  switchHandler = (newName) =>{
     console.log('hii');
     //now fun part begin ab hum yaha pe state ko change karenge on click state me jo bhi h or agar me updation chahta hu click mne to jo me yaha likhunga vo ho jaega click pe or state bas usi state ko change karega jese bas persons pe karengeto ye ise overwrite kar dega is state se
     //niche ek or likha just to show state ise kuch nhi karega
@@ -76,7 +77,7 @@ class App extends Component{
     
     this.setState({
       persons: [
-        {name:'vicky Thakur' ,age: '23' },
+        {name: newName ,age: '23' },
         {name: 'sammer Ranjan' , age:'24'},
       {name:'Neha Meena' , age:'23'}]
 
@@ -88,12 +89,13 @@ class App extends Component{
       <div className = "App">
       
         <h1>hii thiis is class component</h1>
-        <button onClick ={this.switchHandler}>click here</button>
+        <button onClick ={this.switchHandler.bind(this, 'vickey' )}>click here</button>
         <Person name = {this.state.persons[0].name} age ={this.state.persons[0].age}></Person>
         <Person name = {this.state.persons[1].name}
          age ={this.state.persons[1].age}
          //yaha pe hum chanhte h ki ye isko bhi click karne pe ho jae islie humne yaha dal dia h or yaha humne dala h kyuki person.js me to hum switch handler ko acces nhi kar skte par ab click ko as a prop ki tarah kar skte h
-         click= {this.switchHandler}></Person>
+        //  now we want ki hum ye state ka data hardcore na kare balki apni marzi se bheje
+         click= {this.switchHandler.bind(this, 'vickyy')}></Person>
         <Person name = {this.state.persons[2].name} age ={this.state.persons[2].age}></Person>
 
 
