@@ -18,7 +18,8 @@ const person = (props) => {
            <p>{props.children}</p>
            {/* now we want ki hum jo input kare uske hisab se nam change ho jsime hum chahe */}
            {/* onChange internal event listerner h ab hum app.js me ek funcn banenge or fir yaha props.jo bhi uska naam h vese add kar denge simply */}
-           <input type="text" onChange ={props.changed} />
+            {/* will show the existing name in input so we have dynamically changed the ip */}
+           <input type="text" onChange ={props.changed} value={props.name} />
        </div>
    )
    
