@@ -115,21 +115,15 @@ tooglePerson = () =>{
 
   
   render(){
-    return(
-      <div className = "App">
-      
-        <h1>hii thiis is class component</h1>
-        {/* <button onClick ={this.switchHandler.bind(this, 'vickey' )}>click here</button> */}
-        {/* ab yaha pe ise ek div me wrap kar rhe h or jice onclick pe ye show ho or isme if else nhi chalega isme trenary operator chalegaa hum bas simple statement use kar skte h yaha par na ki block statement  upar bana h button usko comment karkr */}
-        <button onClick= {this.tooglePerson}>Show Persons</button>
-       
-{/* ye boolean h to showPerson to ye true hi h  */}
-        {
-          
-          this.state.showPerson ===true ?
-
-          
-          <div>
+      //now we are handling dynamic content jo pehle kia tha vahi but in the preffered and elegent way
+      //when react render something to the screen it executes the render method and not return statement evenry thing wtever we have written there
+      //initially person ko null de dia 
+      let persons = null;
+      //yaha pe hum if else use kar skte h 
+      if(this.state.showPerson === true){
+        //agr true h to ise set karde Person ko ise bas or fir return wale me ise use kar lo
+        persons = (
+        <div>
         
               <Person name = {this.state.persons[0].name} age ={this.state.persons[0].age}></Person>
               <Person name = {this.state.persons[1].name}
@@ -142,8 +136,27 @@ tooglePerson = () =>{
               // yaha jo changed dala h vo hi props me bhejenge
               changed = {this.nameChangeHandler}></Person>
           
-         </div> :null
-        }
+         </div>
+        );
+
+      }
+
+
+
+
+    return(
+      <div className = "App">
+      
+        <h1>hii thiis is class component</h1>
+        <button onClick= {this.tooglePerson}>Show Persons</button>
+        {/* yaha hum refer kar rhe jo humne upar banaya h persons ka variable */}
+        {persons}
+       
+        
+          
+
+          
+          
 
 
 
