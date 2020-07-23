@@ -59,6 +59,7 @@ import person from './Person/Person';
 
 class App extends Component{
   state = {
+    // ek tarike se this is our database and in bigger app we are getting these from the servers but here we are gettin these from here set or change to niche kar rhe h par data base to yahi h
    persons: [
       {name:'vicky' ,age: '22' },
       {name: 'sammer' , age:'24'},
@@ -125,7 +126,9 @@ tooglePerson = () =>{
         persons = (
         <div>
         
-              <Person name = {this.state.persons[0].name} age ={this.state.persons[0].age}></Person>
+        {/* ye mene list ke lie kia h ki yaha pe ky ah hum individually hi har data ko daal rhe h to if our data base get altered or something happens then it wont work simply kyuki ye refer karega alag ko or aiega alag if order is changed so to avoid this we have to use a flexible way or outputting list   */}
+              <Person name = {this.state.persons[0].name} 
+              age ={this.state.persons[0].age}></Person>
               <Person name = {this.state.persons[1].name}
               age ={this.state.persons[1].age}
               //yaha pe hum chanhte h ki ye isko bhi click karne pe ho jae islie humne yaha dal dia h or yaha humne dala h kyuki person.js me to hum switch handler ko acces nhi kar skte par ab click ko as a prop ki tarah kar skte h
