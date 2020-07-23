@@ -125,8 +125,19 @@ tooglePerson = () =>{
         //agr true h to ise set karde Person ko ise bas or fir return wale me ise use kar lo
         persons = (
         <div>
+        {/* ab ye jsx ke anddar h to me ise fliexible bana rha hu na ki hardcore kar rha hu as we are doing */}
+        {/* mera sole aim h ki me state ke har ek element ko chnage kar du to for that es-6 i.e vanilla js provide us .map() function ab ye har pe chalega to jo hume karna h vo function ye method hum likh denge uske andar or vo har state ke element par chalega */}
+        {this.state.persons.map(person_or_anyname =>{
+          {/* obvious h kuch return karna hoga to vahi return karrnge jo hum is map funcn se har element se karana chahte ho to vo name or age hi h vahi to chaie hume or hum ye map karan chahte h person component me  */}
+
+          return <Person 
+          name={person_or_anyname.name} 
+          age = {person_or_anyname.age}/>
+        })}
+
         
-        {/* ye mene list ke lie kia h ki yaha pe ky ah hum individually hi har data ko daal rhe h to if our data base get altered or something happens then it wont work simply kyuki ye refer karega alag ko or aiega alag if order is changed so to avoid this we have to use a flexible way or outputting list   */}
+        {/* ye mene list ke lie kia h ki yaha pe ky ah hum individually hi har data ko daal rhe h to if our data base get altered or something happens then it wont work simply kyuki ye refer karega alag ko or aiega alag if order is changed so to avoid this we have to use a flexible way or outputting list comment kar dia ab isko  */}
+{/*        
               <Person name = {this.state.persons[0].name} 
               age ={this.state.persons[0].age}></Person>
               <Person name = {this.state.persons[1].name}
@@ -138,7 +149,7 @@ tooglePerson = () =>{
               age ={this.state.persons[2].age}
               // yaha jo changed dala h vo hi props me bhejenge
               changed = {this.nameChangeHandler}></Person>
-          
+           */}
          </div>
         );
 
